@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdatePetRequest extends FormRequest
+class UpdateUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,9 +25,9 @@ class UpdatePetRequest extends FormRequest
     {
         return [
             'name' => 'string|max:255',
-            'age' => 'numeric',
-            'description' => 'string|max:255',
-            'photo_path' => 'string|max:255'
+            'email' => 'email',
+            'password' => 'string|min:8',
+            'is_admin' => 'boolean'
         ];
     }
 }

@@ -26,7 +26,7 @@ class CreatePetRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'age' => 'required|numeric',
-            'description' => 'nullable|string|max:255',
+            'description' => 'string|max:255',
             'photo_path' => 'required|string|max:255'
         ];
     }

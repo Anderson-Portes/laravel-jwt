@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdatePetRequest extends FormRequest
+class CreateUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,10 @@ class UpdatePetRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'string|max:255',
-            'age' => 'numeric',
-            'description' => 'string|max:255',
-            'photo_path' => 'string|max:255'
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|string|min:8',
+            'is_admin' => 'nullable|boolean'
         ];
     }
 }
